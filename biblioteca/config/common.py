@@ -10,6 +10,28 @@ load_dotenv()
 
 class Common(Configuration):
 
+    CORS_ORIGIN_ALLOW_ALL = True
+
+    CORS_ALLOW_CREDENTIALS = True
+
+    #Dominios que pueden realizar peticiones
+    CORS_ORIGIN_WHITELIST = (
+        'http://localhost:8080',
+    )
+
+    CORS_ALLOW_HEADERS = [
+        'accept',
+        'accept-encoding',
+        'authorization',
+        'content-type',
+        'dnt',
+        'origin',
+        'user-agent',
+        'x-csrftoken',
+        'x-requested-with',
+    ]
+
+
     INSTALLED_APPS = (
         'django.contrib.admin',
         'django.contrib.auth',
@@ -27,6 +49,7 @@ class Common(Configuration):
         # Your apps
         'biblioteca.users',
         'book',
+        'corsheaders',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
@@ -34,11 +57,13 @@ class Common(Configuration):
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
+        'corsheaders.middleware.CorsMiddleware',  # Mover aquí
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     )
+
 
     ALLOWED_HOSTS = ["*"]
     ROOT_URLCONF = 'biblioteca.urls'
