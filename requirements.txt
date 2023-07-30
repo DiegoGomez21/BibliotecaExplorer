@@ -4,6 +4,7 @@ Django==4.2.1
 django-configurations==2.4.1
 gunicorn==20.1.0
 newrelic==8.8.0
+python-dotenv==1.0.0
 
 # For the persistence stores
 psycopg2-binary==2.9.6
@@ -15,12 +16,12 @@ django_unique_upload==0.2.1
 
 # Rest apis
 djangorestframework==3.14.0
-Markdown==3.4.3
+Markdown==3.3.4
 django-filter==23.2
 
 # Developer Tools
 ipdb==0.13.13
-ipython==8.13.2
+ipython==8.13
 mkdocs==1.4.3
 flake8==6.0.0
 

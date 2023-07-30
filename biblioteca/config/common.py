@@ -1,10 +1,12 @@
 import os
 from os.path import join
 from distutils.util import strtobool
+from dotenv import load_dotenv
 import dj_database_url
 from configurations import Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+load_dotenv()
 
 class Common(Configuration):
 
@@ -24,7 +26,7 @@ class Common(Configuration):
 
         # Your apps
         'biblioteca.users',
-
+        'book',
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
@@ -53,7 +55,7 @@ class Common(Configuration):
     # Postgres
     DATABASES = {
         'default': dj_database_url.config(
-            default='postgres://postgres:@postgres:5432/postgres',
+            default=os.getenv('DATABASE_URL',default='postgres://postgres:@postgres:5432/postgres'),
             conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
         )
     }
