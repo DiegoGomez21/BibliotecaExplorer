@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import ListBook from "../components/books/ListBooks.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <ListBook />
   </main>
 </template>
