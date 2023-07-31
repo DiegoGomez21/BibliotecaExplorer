@@ -51,7 +51,7 @@ methods: {
       body: JSON.stringify({username: this.username, password: this.password})
     }
 
-    fetch('http://18.207.214.64:8000/api-token-auth/', requestOptions)
+    fetch('https://18.207.214.64/api-token-auth/', requestOptions)
       .then(result => result.json())
       .then(data => {
         console.log(data.token)

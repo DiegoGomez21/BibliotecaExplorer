@@ -84,7 +84,7 @@ methods: {
       body: JSON.stringify({username: this.username, password: this.password, first_name: this.first_name, last_name: this.last_name, email: this.email})
     }
 
-    fetch('http://localhost:8000/api/v1/users/', requestOptions)
+    fetch('https://18.207.214.64/api/v1/users/', requestOptions)
       .then(result => result.json())
       .then(data => {
         console.log(data)

@@ -45,7 +45,7 @@ export default{
   },
   methods: {
     getBooks () {
-      const path = 'http://18.207.214.64:8000/api/v1.0/books/'
+      const path = 'https://18.207.214.64/api/v1.0/books/'
       axios.get(path).then((response) => {
         this.books = response.data.results
         console.log(response.data)
