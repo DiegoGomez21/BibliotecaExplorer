@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
+import SearchView from "../views/SearchView.vue";
 
 const guard = function (to, from, next) {
   if (localStorage.getItem('token')) {
@@ -16,7 +17,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/hoome",
       name: "home",
       component: HomeView,
       beforeEnter: (to, from, next) => {
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/register",
       name: "register",
       component: RegisterView
+    },
+    {
+      path: "/",
+      name: "search",
+      component: SearchView
     },
     {
       path: "/about",

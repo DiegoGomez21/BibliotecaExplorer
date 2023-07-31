@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-      <h2>This is a Login page</h2>
+      <h2>Iniciar Sesion</h2>
       <div class="col-6 mx-auto">
           <form @submit.prevent="submit">
               <div class="mb-3">

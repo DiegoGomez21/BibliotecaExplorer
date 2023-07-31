@@ -1,9 +1,9 @@
 <script setup>
-import ListBook from "../components/books/ListBooks.vue";
+import ListBookUser from "../components/books/ListBooksUser.vue";
 </script>
 
 <template>
   <main>
-    <ListBook />
+    <ListBookUser />
   </main>
 </template>
